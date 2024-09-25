@@ -1,0 +1,164 @@
+:root {
+  --primary: rgb(118, 168, 238);
+  --secondary: rgb(177, 218, 251);
+  --tertiary: rgba(72, 231, 154, 0.941);
+}
+body {
+  margin: 0;
+  font-size: 1.2rem;
+}
+* {
+  box-sizing: border-box;
+}
+.kanit-regular {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  background: linear-gradient(
+    var(--secondary),
+    var(--tertiary),
+    var(--primary)
+  );
+  min-height: 100vh;
+}
+.topdisplay {
+  background: var(--secondary);
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: end;
+  font-weight: bolder;
+  box-shadow: 0 10px 5px rgba(128, 128, 128, 0.689);
+  grid-area: topdisplay;
+}
+.calculator {
+  background: rgba(233, 224, 240, 0.804);
+  width: 400px;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "topdisplay topdisplay topdisplay topdisplay"
+    "AC C per div"
+    "btn7 btn8 btn9 mul"
+    "btn4 btn5 btn6 minus"
+    "btn1 btn2 btn3 plus"
+    "btn0 dot equal equal";
+  transform: perspective(70rem) rotateX(20deg);
+  animation: effect 2s;
+}
+.calculator .btn {
+  background: var(--primary);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 5px rgba(128, 128, 128, 0.425);
+  transition: all 0.3s;
+  border-radius: 5px;
+}
+.calculator .btn:hover {
+  cursor: pointer;
+  background: var(--tertiary);
+}
+.btn-AC {
+  grid-area: AC;
+}
+.btn-C {
+  grid-area: C;
+}
+.btn-per {
+  grid-area: per;
+}
+.btn-div {
+  grid-area: div;
+}
+
+.btn-7 {
+  grid-area: btn7;
+}
+.btn-8 {
+  grid-area: btn8;
+}
+.btn-9 {
+  grid-area: btn9;
+}
+.btn-mul {
+  grid-area: mul;
+}
+.btn-4 {
+  grid-area: btn4;
+}
+.btn-5 {
+  grid-area: btn5;
+}
+.btn-6 {
+  grid-area: btn6;
+}
+.btn-minus {
+  grid-area: minus;
+}
+.btn-1 {
+  grid-area: btn1;
+}
+.btn-2 {
+  grid-area: btn2;
+}
+.btn-3 {
+  grid-area: btn3;
+}
+.btn-plus {
+  grid-area: plus;
+}
+.btn-0 {
+  grid-area: btn0;
+}
+.btn-dot {
+  grid-area: dot;
+}
+.btn-equal {
+  grid-area: equal;
+}
+.prank {
+  background: linear-gradient(rgb(194, 3, 3), rgb(255, 77, 0));
+  color: white;
+  animation: bounce 0.5s;
+}
+@keyframes bounce {
+  0% {
+    transform: translateX(8px);
+  }
+  50% {
+    transform: translateX(-8px);
+  }
+  80% {
+    transform: translateX(8px);
+  }
+  100% {
+    transform: translateX(-8px);
+  }
+}
+@keyframes effect {
+  0% {
+    transform: perspective(10rem) rotateX(20deg);
+  }
+  20% {
+    transform: perspective(10rem) rotateY(20deg);
+  }
+  50% {
+    transform: perspective(40rem) rotateX(20deg);
+  }
+  80% {
+    transform: perspective(70rem) rotateY(20deg);
+  }
+  100% {
+    transform: perspective(70rem) rotateX(20deg);
+  }
+}
